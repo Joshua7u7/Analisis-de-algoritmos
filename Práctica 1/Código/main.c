@@ -3,6 +3,7 @@
 #include "Ordenamiento.h"
 
 int * crearArreglo();
+void mostrarArreglo(int * arreglo, int n);
 
 int main(int argc, char** argv)
 {
@@ -12,6 +13,7 @@ int main(int argc, char** argv)
 
 	return 0;
 }
+
 
 int * crearArreglo()
 {
@@ -24,4 +26,17 @@ int * crearArreglo()
 		exit(0);
 	}
 	return nuevo;
+}
+
+void mostrarArreglo(int * arreglo, int n)
+{
+	for (int i=0;i<n;i++)
+	{
+		if((i%10)==0)
+		{
+			printf("\n");
+		}
+
+		printf("%d , ", arreglo[i]);
+	}
 }
