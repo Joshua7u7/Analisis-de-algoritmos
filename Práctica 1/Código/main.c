@@ -2,14 +2,22 @@
 #include <stdlib.h>
 #include "Ordenamiento.h"
 
+
 int * crearArreglo();
 void mostrarArreglo(int * arreglo, int n);
+int * llenarArreglo(int * arreglo);
 
 int main(int argc, char** argv)
 {
 	int * arreglo = crearArreglo();
 
-	printf("\n%d\n",sizeof(arreglo));
+	arreglo=llenarArreglo(arreglo);
+
+	mostrarArreglo(arreglo,7);
+
+	printf("\n");
+	
+	Arbol_O(arreglo,7);
 
 	return 0;
 }
@@ -40,3 +48,42 @@ void mostrarArreglo(int * arreglo, int n)
 		printf("%d , ", arreglo[i]);
 	}
 }
+
+
+int * llenarArreglo(int * arreglo)
+{
+	FILE * archivo;
+
+	int * aux=arreglo;
+	
+	archivo=fopen("N.txt","r");
+
+	char c;
+
+	while((c=fgetc(archivo))!=EOF)
+	{
+		if(c!='\n')
+		{
+			*arreglo = atoi(&c);
+			arreglo++;	
+		}
+	}
+
+	arreglo=aux;
+	return arreglo;
+}
+
+
+/*
+Funcion()
+
+Corre funcion tiempo
+
+Algoritmo ordenamiento
+
+Corre fuicnion tiempo final
+
+
+Imprimir valores de la tabla
+
+*/
