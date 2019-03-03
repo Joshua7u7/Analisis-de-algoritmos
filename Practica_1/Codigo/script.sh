@@ -1,4 +1,5 @@
 #!/bin/bash
+
 gcc -g prueba.c -o prueba
 ./prueba 100 6 >> salida.txt
 echo "1"
